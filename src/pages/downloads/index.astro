@@ -1,53 +1,59 @@
 ---
-import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/SoftwarePreview.astro";
+import Button from "@/components/input/Button.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const modules = [
+  {
+    name: "velocity",
+    description: "Core plugin responsible for profiles, storage, command routing, and module lifecycle.",
+  },
+  {
+    name: "auth-yggd",
+    description: "Yggdrasil authentication module for Mojang and third-party account systems.",
+  },
+  {
+    name: "auth-offline",
+    description: "Offline/local account module for hybrid environments.",
+  },
+  {
+    name: "profile-skin",
+    description: "Skin extraction and repair module with profile-property caching.",
+  },
+  {
+    name: "data-merge",
+    description: "Migration module for importing existing AuthMe and MultiLogin data.",
+  },
+  {
+    name: "api",
+    description: "Public API package for integration and extension development.",
+  },
+];
 ---
 
 <Layout
   title="Downloads"
-  description="Find downloads for our software – including Paper, Velocity, and Waterfall."
-  keywords={["papermc", "minecraft", "performance", "paper", "velocity", "waterfall", "downloads"]}
+  description="HyperZoneLogin module overview with release and source links."
+  keywords={["hyperzonelogin", "downloads", "velocity", "modules", "minecraft"]}
   canonical="/downloads"
 >
-  <header class="mx-auto flex max-w-4xl flex-col items-center gap-2 px-4 pt-32 pb-16 lg:pt-28 lg:pb-12">
+  <header class="mx-auto flex max-w-5xl flex-col items-center gap-2 px-4 pt-32 pb-16 lg:pt-28 lg:pb-12">
     <h1 class="text-4xl leading-normal font-medium lg:text-5xl lg:leading-normal">Downloads</h1>
     <p class="mb-6 text-center text-xl">
-      {"Select the software you want to download."}
+      Browse HyperZoneLogin modules and grab published builds from GitHub Releases.
     </p>
-    <h2 class="mt-4 text-center text-2xl font-medium">Server Software</h2>
-    <div class="grid gap-2 px-2 md:grid-cols-2 xl:gap-4">
-      <SoftwarePreview
-        id="paper"
-        name="Paper"
-        icon="brand/paper"
-        description="Paper is a Minecraft game server, designed to greatly improve performance and offer more advanced features and API."
-        type={SoftwarePreviewType.Download}
-      />
-      <SoftwarePreview
-        id="folia"
-        name="Folia"
-        icon="brand/folia"
-        description="Folia is a new fork of Paper that adds regionized multithreading to the server."
-        type={SoftwarePreviewType.Download}
-      />
+    <div class="grid w-full gap-3 md:grid-cols-2">
+      {
+        modules.map((module) => (
+          <article class="rounded-md border border-gray-300 p-5 dark:border-gray-700">
+            <h2 class="text-xl font-semibold">{module.name}</h2>
+            <p class="mt-2 text-gray-700 dark:text-gray-200">{module.description}</p>
+          </article>
+        ))
+      }
     </div>
-    <h2 class="mt-4 text-center text-2xl font-medium">Proxy Software</h2>
-    <div class="grid gap-2 px-2 md:grid-cols-2 xl:gap-4">
-      <SoftwarePreview
-        id="velocity"
-        name="Velocity"
-        icon="brand/velocity"
-        description="Velocity is the modern, high-performance Minecraft server proxy."
-        type={SoftwarePreviewType.Download}
-      />
-      <SoftwarePreview
-        id="waterfall"
-        name="Waterfall"
-        icon="brand/waterfall"
-        description="Waterfall is a legacy drop-in BungeeCord replacement with some additional improvements to performance and stability."
-        type={SoftwarePreviewType.Download}
-        eol
-      />
+    <div class="mt-8 flex flex-row gap-4">
+      <Button variant="filled" href="https://github.com/HyperZoneLogin/HyperzoneLogin/releases" external> Latest Releases </Button>
+      <Button variant="outlined" href="https://github.com/HyperZoneLogin/HyperzoneLogin" external> Repository </Button>
     </div>
   </header>
 </Layout>

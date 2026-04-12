@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { title, description, keywords, canonical } = Astro.props;
+const siteOrigin = Astro.site?.toString().replace(/\/$/, "") ?? "https://hyperzonelogin.pages.dev";
 ---
 
 <!doctype html>
@@ -23,17 +24,17 @@ const { title, description, keywords, canonical } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/assets/logo/256x.png" />
-    <meta property="og:url" content={`https://papermc.io` + canonical} />
+    <meta property="og:url" content={siteOrigin + canonical} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="PaperMC" />
+    <meta property="og:site_name" content="HyperZoneLogin" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/assets/logo/256x.png" />
-    <link rel="canonical" href={`https://papermc.io` + canonical} />
+    <link rel="canonical" href={siteOrigin + canonical} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>{`${title} | PaperMC`}</title>
+    <title>{`${title} | HyperZoneLogin`}</title>
   </head>
   <body class="flex min-h-screen flex-col">
     <NavBar />

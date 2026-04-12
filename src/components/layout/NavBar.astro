@@ -18,37 +18,38 @@ import LogoMarkerLight from "@/assets/brand/logo-marker-light.svg";
     <a href="/" class="leading-none" tabindex="-1" aria-hidden={true}>
       <picture>
         <source srcset={LogoMarkerDark.src} media="(prefers-color-scheme: dark)" />
-        <img src={LogoMarkerLight.src} alt="PaperMC" class="block h-12 cursor-pointer" />
+        <img src={LogoMarkerLight.src} alt="HyperZoneLogin" class="block h-12 cursor-pointer" />
       </picture>
     </a>
     <div
       id="nav-menu"
       class="bg-background-light-10 dark:bg-background-dark-90 absolute top-full right-0 left-0 flex w-full flex-col gap-4 p-4 shadow-lg max-md:hidden! md:relative md:flex md:w-auto md:flex-row md:items-center md:gap-0 md:bg-transparent md:p-0 md:shadow-none"
     >
-      <NavDropDown label="Software">
-        <NavDropDownLink href="/software/paper">Paper</NavDropDownLink>
-        <NavDropDownLink href="/software/folia">Folia</NavDropDownLink>
-        <NavDropDownLink href="/software/velocity">Velocity</NavDropDownLink>
-        <NavDropDownLink href="/software/waterfall" eol>Waterfall</NavDropDownLink>
+      <NavDropDown label="Project">
+        <NavDropDownLink href="/downloads">Modules</NavDropDownLink>
+        <NavDropDownLink href="/javadocs">Developer API</NavDropDownLink>
+        <NavDropDownLink href="https://github.com/HyperZoneLogin/HyperzoneLogin/releases" target="_blank">Releases</NavDropDownLink>
       </NavDropDown>
-      <NavLink href="https://hangar.papermc.io/" target="_blank" className="inline-flex items-center">
-        Plugins
+      <NavLink href="https://github.com/HyperZoneLogin/HyperzoneLogin" target="_blank" className="inline-flex items-center">
+        GitHub
         <Icon name="icons/heroicons/arrow-top-right-on-square" class="ml-1 size-4 align-sub" />
       </NavLink>
-      <NavLink href="https://docs.papermc.io/" target="_blank" className="inline-flex items-center">
+      <NavLink href="/news">
+        Updates
+      </NavLink>
+      <NavLink href="https://github.com/HyperZoneLogin/HyperzoneLogin/blob/master/README.md" target="_blank" className="inline-flex items-center">
         Docs
         <Icon name="icons/heroicons/arrow-top-right-on-square" class="ml-1 size-4 align-sub" />
       </NavLink>
-      <NavLink href="/news">News</NavLink>
       <NavLink href="/team">Team</NavLink>
       <NavLink href="/contribute">Contribute</NavLink>
     </div>
 
     <div class="grow"></div>
 
-    <IconButton icon="icons/fontawesome/discord-brands" label="Discord" href="https://discord.gg/papermc" external />
-    <IconButton icon="icons/fontawesome/github-brands" label="GitHub" href="https://github.com/PaperMC" external />
-    <IconButton icon="icons/fontawesome/twitter-brands" label="Twitter" href="https://twitter.com/PaperPowered" external />
+    <IconButton icon="icons/fontawesome/discord-brands" label="Discord" href="https://discord.gg/dCAeNyR9TA" external />
+    <IconButton icon="icons/fontawesome/github-brands" label="GitHub" href="https://github.com/HyperZoneLogin" external />
+    <IconButton icon="icons/heroicons/chat-bubble-left-right" label="QQ Group" href="https://qm.qq.com/q/GZWVfEyokS" external />
   </div>
 </nav>
 

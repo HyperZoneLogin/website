@@ -12,7 +12,7 @@
   let success = $state<string | null>(null);
   let history = $state<{ kind: "cmd" | "info"; text: string }[]>([]);
 
-  let latestStableVersion = $state<string>("1.21.8");
+  let latestStableVersion = $state<string>("latest");
 
   onMount(async () => {
     const response = await fetch("/internal-api/terminal");
@@ -32,18 +32,19 @@
 
     switch (value) {
       case "help":
-        response = "Existing commands: help, downloads, plugins, docs, news, team, contribute";
+        response = "Existing commands: help, downloads, releases, docs, news, team, contribute";
         break;
       case "downloads":
         window.location.href = "/downloads";
         response = "Redirecting...";
         break;
+      case "releases":
       case "plugins":
-        window.location.href = "https://hangar.papermc.io";
+        window.location.href = "https://github.com/HyperZoneLogin/HyperzoneLogin/releases";
         response = "Redirecting...";
         break;
       case "docs":
-        window.location.href = "https://docs.papermc.io";
+        window.location.href = "https://github.com/HyperZoneLogin/HyperzoneLogin/blob/master/README.md";
         response = "Redirecting...";
         break;
       case "news":
@@ -74,7 +75,7 @@
     success = null;
 
     const outputLines = [
-      `Starting minecraft server version ${latestStableVersion}`,
+      `Starting HyperZoneLogin runtime ${latestStableVersion}`,
       'Preparing level "world"',
       "Preparing start region for dimension minecraft:overworld",
       "Time elapsed: 363 ms",
@@ -97,7 +98,7 @@
       }
 
       let currentArgs = "";
-      for (const ch of " -jar paper.jar") {
+      for (const ch of " -jar hyperzonelogin-velocity.jar") {
         if (cancelled) return;
         currentArgs += ch;
         args = currentArgs;

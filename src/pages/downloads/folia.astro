@@ -1,26 +1,19 @@
----
-export const prerender = false;
-import { env } from "cloudflare:workers";
 import Layout from "@/layouts/Layout.astro";
-import SoftwareDownloadPage from "@/components/data/SoftwareDownloadPage.svelte";
-import { fetchDownloadsPageData } from "@/utils/download";
-
-Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=120");
-Astro.response.headers.set("CDN-Cache-Control", "public, max-age=600, stale-while-revalidate=120");
-const data = await fetchDownloadsPageData("folia", env.WEBSITE_CACHE);
+import Button from "@/components/input/Button.astro";
 ---
 
 <Layout
-  title="Folia"
-  description="Download the latest builds of Folia, the experimental Paper fork with regionised multithreading."
-  keywords={["papermc", "minecraft", "performance", "paper", "downloads", "jar"]}
+  title="Legacy Downloads Alias"
+  description="Legacy alias route for HyperZoneLogin downloads."
+  keywords={["hyperzonelogin", "downloads", "legacy-route"]}
   canonical="/downloads/folia"
 >
-  <SoftwareDownloadPage
-    id="folia"
-    description="Download Folia, our new fork of Paper that adds regionized multithreading to the server"
-    experimentalWarning="Download experimental builds of Folia, our new fork of Paper that adds regionized multithreading to the server. Proceed with caution!"
-    client:load="svelte"
-    {data}
-  />
+  <section class="mx-auto max-w-4xl px-4 pt-32 pb-20">
+    <h1 class="text-4xl font-medium">Downloads</h1>
+    <p class="mt-4 text-xl">This route is preserved for existing bookmarks. New release assets are published on GitHub Releases.</p>
+    <div class="mt-8 flex flex-row gap-4">
+      <Button variant="filled" href="https://github.com/HyperZoneLogin/HyperzoneLogin/releases" external>Latest Releases</Button>
+      <Button variant="outlined" href="/downloads">Module Overview</Button>
+    </div>
+  </section>
 </Layout>

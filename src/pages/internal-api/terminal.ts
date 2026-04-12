@@ -1,48 +1,12 @@
 import type { APIRoute } from "astro";
-import { downloadsPageDataKvKey, getProjectDescriptorOrError, type DownloadsPageData } from "@/utils/download";
 
-export const GET: APIRoute = async (context) => {
-  let ver: string | null = null;
-
-  const kv = context.locals.runtime?.env?.WEBSITE_CACHE;
-  if (kv) {
-    const cached = await kv.get(downloadsPageDataKvKey("paper"));
-    if (cached !== null) {
-      const pageData: DownloadsPageData = JSON.parse(cached);
-      const cachedVer = pageData.projectResult.value?.latestStableVersion;
-      if (cachedVer) {
-        ver = cachedVer;
-      }
-    }
-  }
-  if (ver === null) {
-    const projectDescriptor = await getProjectDescriptorOrError("paper");
-    const foundVer = projectDescriptor.value?.latestStableVersion;
-    if (foundVer) {
-      ver = foundVer;
-    }
-  }
-
-  if (ver !== null) {
-    return new Response(
-      JSON.stringify({
-        version: ver,
-      }),
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-  }
-
+export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({
-      error: "Internal server error",
+      version: "latest",
     }),
     {
-      status: 500,
+      status: 200,
       headers: {
         "Content-Type": "application/json",
       },

@@ -11,13 +11,13 @@ const hash = import.meta.env.GIT_COMMIT_HASH;
         <span class="font-semibold">Getting Started</span>
         <ul class="mt-4 space-y-2 leading-5 text-gray-400">
           <li>
-            <a href="/downloads">Downloads</a>
+            <a href="/downloads">Module Overview</a>
           </li>
           <li>
-            <a href="https://docs.papermc.io" target="_blank"> Documentation </a>
+            <a href="https://github.com/HyperZoneLogin/HyperzoneLogin/releases" target="_blank" rel="noreferrer"> Releases </a>
           </li>
           <li>
-            <a href="/javadocs">Javadocs</a>
+            <a href="/javadocs">Developer API</a>
           </li>
         </ul>
       </div>
@@ -25,24 +25,21 @@ const hash = import.meta.env.GIT_COMMIT_HASH;
         <span class="font-semibold">Community</span>
         <ul class="mt-4 space-y-2 leading-5 text-gray-400">
           <li>
-            <a href="/community">Our Community</a>
+            <a href="/community">Community Hub</a>
           </li>
           <li>
-            <a href="https://github.com/PaperMC" target="_blank" rel="noreferrer"> GitHub </a>
+            <a href="https://discord.gg/dCAeNyR9TA" target="_blank" rel="noreferrer"> Discord </a>
           </li>
           <li>
-            <a href="https://discord.gg/papermc" target="_blank" rel="noreferrer"> Discord </a>
+            <a href="https://qm.qq.com/q/GZWVfEyokS" target="_blank" rel="noreferrer"> QQ Group </a>
           </li>
           <li>
-            <a href="https://forums.papermc.io/" target="_blank"> Forums </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/PaperPowered" target="_blank" rel="noreferrer"> Twitter </a>
+            <a href="https://github.com/HyperZoneLogin" target="_blank" rel="noreferrer"> GitHub Organization </a>
           </li>
         </ul>
       </div>
       <div>
-        <span class="font-semibold">PaperMC</span>
+        <span class="font-semibold">HyperZoneLogin</span>
         <ul class="mt-4 space-y-2 leading-5 text-gray-400">
           <li>
             <a href="/team">Our Team</a>
@@ -54,30 +51,21 @@ const hash = import.meta.env.GIT_COMMIT_HASH;
             <a href="/sponsors">Sponsors</a>
           </li>
           <li>
-            <a href="/news">News</a>
-          </li>
-          <li>
-            <a href="https://hangar.papermc.io" target="_blank"> Hangar </a>
+            <a href="/news">Updates</a>
           </li>
         </ul>
       </div>
       <div>
-        <span class="font-semibold">Terms</span>
+        <span class="font-semibold">Project Resources</span>
         <ul class="mt-4 space-y-2 leading-5 text-gray-400">
           <li>
-            <a href="https://forums.papermc.io/help/terms/">Terms</a>
+            <a href="https://github.com/HyperZoneLogin/HyperzoneLogin/blob/master/LICENSE" target="_blank" rel="noreferrer">License</a>
           </li>
           <li>
-            <a href="https://forums.papermc.io/help/privacy-policy/"> Privacy Policy </a>
+            <a href="https://github.com/HyperZoneLogin/HyperzoneLogin/issues" target="_blank" rel="noreferrer">Issue Tracker</a>
           </li>
           <li>
-            <a href="https://forums.papermc.io/help/legal-notice/"> Legal Notice </a>
-          </li>
-          <li>
-            <a href="https://hangar.papermc.io/terms">Hangar Terms</a>
-          </li>
-          <li>
-            <a href="https://hangar.papermc.io/privacy"> Hangar Privacy Policy </a>
+            <a href="https://github.com/HyperZoneLogin/HyperzoneLogin/discussions" target="_blank" rel="noreferrer">Discussions</a>
           </li>
           <li>
             <a href="/community/guidelines">Community Guidelines</a>
@@ -90,22 +78,14 @@ const hash = import.meta.env.GIT_COMMIT_HASH;
       <div class="flex-1"></div>
       <div class="flex flex-col">
         <span class="text-right text-sm text-gray-300">
-          © {new Date().getFullYear()} The PaperMC Team
+          © {new Date().getFullYear()} HyperZoneLogin Contributors
         </span>
-        <span class="prose-link commit text-sm text-gray-300">
-          <a class="text-sm font-medium" href="https://github.com/PaperMC/website/"> PaperMC/website </a>
-          {" @ "}
-          <a class="text-sm font-medium" href={`https://github.com/PaperMC/website/commit/${hash}`}>
-            {hash}
-          </a>
-        </span>
+        <span class="prose-link commit text-sm text-gray-300">Build {hash}</span>
       </div>
     </div>
     <div class="mt-4 flex flex-row items-center gap-2 pt-4">
       <span class="text-sm text-gray-300">
-        This website is not an official Minecraft website and is not associated with Mojang Studios or Microsoft. All product and company
-        names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or
-        endorsement by them.
+        HyperZoneLogin is an independent open source project. Minecraft and Mojang are trademarks of their respective owners.
       </span>
     </div>
   </div>
@@ -115,8 +95,5 @@ const hash = import.meta.env.GIT_COMMIT_HASH;
   @reference "tailwindcss";
   .footer a {
     @apply transition hover:text-gray-200;
-  }
-  .commit a {
-    @apply text-blue-500 hover:text-blue-400;
   }
 </style>

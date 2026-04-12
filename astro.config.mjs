@@ -8,9 +8,10 @@ import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 
 const GIT_COMMIT_HASH = (process.env.GITHUB_SHA || "").trim().slice(0, 7) || execSync("git rev-parse --short HEAD").toString().trim();
+const SITE_URL = process.env.SITE_URL || "https://hyperzonelogin.pages.dev";
 
 export default defineConfig({
-  site: "https://papermc.io",
+  site: SITE_URL,
 
   vite: {
     plugins: [tailwindcss()],

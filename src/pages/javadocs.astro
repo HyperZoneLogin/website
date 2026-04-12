@@ -1,24 +1,31 @@
----
 import Layout from "@/layouts/Layout.astro";
-import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/SoftwarePreview.astro";
+import Button from "@/components/input/Button.astro";
 ---
 
 <Layout
-  title="Javadocs"
-  description="Find javadocs for our software – including Paper, Folia, Velocity, and Waterfall."
-  keywords={["papermc", "paper", "folia", "javadocs", "velocity", "waterfall"]}
+  title="Developer API"
+  description="Developer resources and API entry points for HyperZoneLogin integrations."
+  keywords={["hyperzonelogin", "api", "developer", "velocity", "javadocs"]}
   canonical="/javadocs"
 >
   <header class="mx-auto flex max-w-7xl flex-col items-center gap-2 px-4 pt-32 pb-16 lg:pt-48 lg:pb-26">
-    <h1 class="text-4xl leading-normal font-medium lg:text-5xl lg:leading-normal">Javadocs</h1>
+    <h1 class="text-4xl leading-normal font-medium lg:text-5xl lg:leading-normal">Developer API</h1>
     <p class="mb-6 text-center text-xl">
-      {"You can find the javadocs for our software below:"}
+      Use these resources to integrate modules and extend HyperZoneLogin.
     </p>
-    <div class="grid gap-2 px-2 md:grid-cols-4 lg:mt-6 xl:gap-4">
-      <SoftwarePreview id="paper" name="Paper" icon="brand/paper" type={SoftwarePreviewType.Javadocs} />
-      <SoftwarePreview id="folia" name="Folia" icon="brand/folia" type={SoftwarePreviewType.Javadocs} />
-      <SoftwarePreview id="velocity" name="Velocity" icon="brand/velocity" type={SoftwarePreviewType.Javadocs} />
-      <SoftwarePreview id="waterfall" name="Waterfall" icon="brand/waterfall" type={SoftwarePreviewType.Javadocs} />
+    <div class="grid w-full max-w-4xl gap-3 px-2 md:grid-cols-2">
+      <article class="rounded-md border border-gray-300 p-5 dark:border-gray-700">
+        <h2 class="text-xl font-semibold">API module</h2>
+        <p class="mt-2">Shared contracts and extension interfaces for custom authentication modules.</p>
+      </article>
+      <article class="rounded-md border border-gray-300 p-5 dark:border-gray-700">
+        <h2 class="text-xl font-semibold">Source-level docs</h2>
+        <p class="mt-2">Read the repository and module READMEs for up-to-date implementation details.</p>
+      </article>
+    </div>
+    <div class="mt-8 flex flex-row gap-4">
+      <Button variant="filled" href="https://github.com/HyperZoneLogin/HyperzoneLogin/tree/master/api" external> API Module </Button>
+      <Button variant="outlined" href="https://github.com/HyperZoneLogin/HyperzoneLogin" external> Full Repository </Button>
     </div>
   </header>
 </Layout>

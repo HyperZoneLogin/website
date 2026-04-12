@@ -18,9 +18,9 @@ export const GET: APIRoute = async ({ site }) => {
   });
 
   return rss({
-    title: "PaperMC News",
-    description: "Updates and news from the PaperMC project",
-    site: site?.toString() ?? "https://papermc.io",
+    title: "HyperZoneLogin Updates",
+    description: "Release notes and project updates from HyperZoneLogin",
+    site: site?.toString() ?? "https://hyperzonelogin.pages.dev",
     items,
     trailingSlash: false,
   });
