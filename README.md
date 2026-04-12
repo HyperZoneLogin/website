@@ -37,6 +37,8 @@ This website introduces HyperZoneLogin and its module ecosystem:
 - profile and skin handling
 - migration tooling for legacy login plugins
 
+Official documentation: https://docs.h2l.icu
+
 ## Main Directories
 
 ```text
@@ -47,6 +49,8 @@ src/layouts/      Shared page layout
 public/           Static assets
 ref/HyperzoneLogin/  Reference project source and docs
 ```
+
+The website links users to the external docs portal at `https://docs.h2l.icu` for setup and module guides.
 
 ## Content and Language
 

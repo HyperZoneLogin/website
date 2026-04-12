@@ -44,7 +44,7 @@
         response = "Redirecting...";
         break;
       case "docs":
-        window.location.href = "https://github.com/HyperZoneLogin/HyperzoneLogin/blob/master/README.md";
+        window.location.href = "https://docs.h2l.icu";
         response = "Redirecting...";
         break;
       case "news":

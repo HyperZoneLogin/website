@@ -42,7 +42,7 @@ const { id, name, icon, github, eol } = Astro.props;
         <Button variant={eol ? "filled-danger" : "filled"} href={github ?? `/downloads/${id}`} external={Boolean(github)}>
           {github ? "GitHub" : "Downloads"}
         </Button>
-        <Button variant="outlined" href="https://github.com/HyperZoneLogin/HyperzoneLogin/blob/master/README.md" external>
+        <Button variant="outlined" href="https://docs.h2l.icu" external>
           Documentation
         </Button>
         <Button variant="outlined" href="/javadocs" className="hidden md:block"> Developer API </Button>
