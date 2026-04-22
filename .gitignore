@@ -27,3 +27,7 @@ pnpm-debug.log*
 .eslintcache
 
 .wrangler/
+
+.dev.vars*
+!.dev.vars.example
+!.env.example

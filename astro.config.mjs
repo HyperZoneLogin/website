@@ -6,6 +6,8 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 
+import cloudflare from "@astrojs/cloudflare";
+
 const GIT_COMMIT_HASH = (process.env.GITHUB_SHA || "").trim().slice(0, 7) || execSync("git rev-parse --short HEAD").toString().trim();
 const SITE_URL = process.env.SITE_URL || "https://hyperzonelogin.pages.dev";
 
@@ -43,4 +45,6 @@ export default defineConfig({
     sitemap(),
     mdx(),
   ],
+
+  adapter: cloudflare(),
 });
