@@ -60,9 +60,19 @@ const initial = (name?.trim?.()[0] ?? "?").toUpperCase();
   const root = document.currentScript?.parentElement;
   const img = root?.querySelector("img");
   if (img) {
-    if (!img.complete || img.naturalWidth === 0) {
-      img.classList.add("invalid");
+    const markInvalid = () => img.classList.add("invalid");
+
+    if (img.complete) {
+      if (img.naturalWidth === 0) {
+        markInvalid();
+      }
+    } else {
+      img.addEventListener("load", () => {
+        if (img.naturalWidth === 0) {
+          markInvalid();
+        }
+      }, { once: true });
+      img.addEventListener("error", markInvalid, { once: true });
     }
-    img.addEventListener("error", () => img.classList.add("invalid"));
   }
 </script>
