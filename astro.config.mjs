@@ -4,7 +4,6 @@ import { execSync } from "child_process";
 import svelte from "@astrojs/svelte";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
-import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 
 const GIT_COMMIT_HASH = (process.env.GITHUB_SHA || "").trim().slice(0, 7) || execSync("git rev-parse --short HEAD").toString().trim();
@@ -12,6 +11,7 @@ const SITE_URL = process.env.SITE_URL || "https://hyperzonelogin.pages.dev";
 
 export default defineConfig({
   site: SITE_URL,
+  output: "static",
 
   vite: {
     plugins: [tailwindcss()],
@@ -43,9 +43,4 @@ export default defineConfig({
     sitemap(),
     mdx(),
   ],
-
-  adapter: cloudflare({
-    prerenderEnvironment: "node",
-    imageService: "compile",
-  }),
 });

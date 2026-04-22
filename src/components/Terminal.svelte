@@ -1,6 +1,5 @@
 <script lang="ts">
   import { formatISOFullTime } from "@/utils/time";
-  import { onMount } from "svelte";
 
   const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
   const getNaturalDelay = () => Math.floor(Math.random() * 80) + 40;
@@ -14,15 +13,6 @@
 
   let latestStableVersion = $state<string>("latest");
 
-  onMount(async () => {
-    const response = await fetch("/internal-api/terminal");
-    if (!response.ok) {
-      console.error("Failed to fetch terminal data");
-      return;
-    }
-    const data: { version: string } = await response.json();
-    latestStableVersion = data.version;
-  });
 
   function handleCommand(e: KeyboardEvent & { currentTarget: HTMLInputElement }) {
     if (e.key !== "Enter") return;

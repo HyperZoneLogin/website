@@ -4,6 +4,7 @@ import { type ProjectDescriptor, type Build, type Project } from "@/utils/types"
 
 export type ProjectDescriptorOrError = { error?: string; value?: ProjectDescriptor };
 export type ProjectBuildsOrError = { error?: string; value?: { latest?: Build; builds: Build[] } };
+type DownloadsCache = { get(key: string): Promise<string | null> };
 export type DownloadsPageData = {
   projectResult: ProjectDescriptorOrError;
   stableBuildsResult: ProjectBuildsOrError;
@@ -14,7 +15,7 @@ export function downloadsPageDataKvKey(projectId: string) {
   return `downloads:${projectId}`;
 }
 
-export async function fetchDownloadsPageData(projectId: string, kv?: KVNamespace): Promise<DownloadsPageData> {
+export async function fetchDownloadsPageData(projectId: string, kv?: DownloadsCache): Promise<DownloadsPageData> {
   if (kv) {
     const cachedString = await kv.get(downloadsPageDataKvKey(projectId));
     if (cachedString !== null) {

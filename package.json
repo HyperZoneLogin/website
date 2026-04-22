@@ -10,14 +10,12 @@
     "format": "prettier --write --list-different .",
     "lint:eslint": "eslint . --cache",
     "lint:prettier": "prettier --check .",
-    "check:types": "wrangler types && astro sync && tsgo --noEmit",
+    "check:types": "astro sync && tsgo --noEmit",
     "lint": "bun run lint:eslint && bun run lint:prettier",
     "check": "bun run check:types",
-    "check:all": "bun run check && bun run lint",
-    "postinstall": "wrangler types"
+    "check:all": "bun run check && bun run lint"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "13.1.7",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@astrojs/svelte": "8.0.4",
@@ -47,8 +45,7 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-svelte": "3.5.1",
     "prettier-plugin-tailwindcss": "0.7.2",
-    "svelte-eslint-parser": "1.6.0",
-    "wrangler": "4.80.0"
+    "svelte-eslint-parser": "1.6.0"
   },
   "devEngines": {
     "runtime": {
