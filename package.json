@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "bun run build && wrangler dev",
     "astro": "astro",
     "format": "prettier --write --list-different .",
     "lint:eslint": "eslint . --cache",
@@ -13,9 +13,12 @@
     "check:types": "astro sync && tsgo --noEmit",
     "lint": "bun run lint:eslint && bun run lint:prettier",
     "check": "bun run check:types",
-    "check:all": "bun run check && bun run lint"
+    "check:all": "bun run check && bun run lint",
+    "generate-types": "wrangler types",
+    "deploy": "bun run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@astrojs/svelte": "8.0.4",
@@ -45,12 +48,16 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-svelte": "3.5.1",
     "prettier-plugin-tailwindcss": "0.7.2",
-    "svelte-eslint-parser": "1.6.0"
+    "svelte-eslint-parser": "1.6.0",
+    "wrangler": "^4.84.1"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
       "version": ">=22.x"
     }
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
